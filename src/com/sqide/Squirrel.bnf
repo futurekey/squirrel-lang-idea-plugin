@@ -321,7 +321,7 @@ private array_list_recover ::= !(']')
 private ArrayListPart ::= ExpressionWithNoComma {recoverWhile="array_list_part_recover"}
 private array_list_part_recover ::= !(']' | ',')
 
-ArrayItemExpression ::= Expression '[' ExpressionWithNoComma ']' PrefixOperator?
+ArrayItemExpression ::= Expression ('.' ExpressionWithNoComma | '[' ExpressionWithNoComma ']') PrefixOperator?
 
 TableExpression ::= '{' KeyValuePairs? '}'
 private TableItemSeparator ::= ',' | '<NL>'
